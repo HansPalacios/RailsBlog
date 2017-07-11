@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsBlog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap-grid.css">
+  </head>
+
+  <body>
+    <div class="container">
+		<div id="header" class="row">
+			<div class="col-md-3">
+				<a href="/"><h1>Venues</h1></a>
+			</div>
+			<div class="col-md-5">
+			</div>
+			<div class="col-md-2">
+			<a href="/signup"><p id="signup">Sign Up</p></a>
+			</div>
+			<div class="col-md-2">
+				<p id="signin">Sign In</p>
+			</div>
+			<div id="signinbox">
+				<h1>Sign In</h1>
+				<div id="close">x</div>
+				<%flash[:notice]%>
+				<form method="POST" action="/sign-in">
+				<label for="username">Username</label>
+				<input type="text" name="username">
+				<br>
+				<label for="password">Password</label>
+				<input type="password" name="password">
+				<input type="submit" name="submit">	
+				</form>
+			</div>
+		</div>
+		<div id="nav" class="row">
+			<div class="col-md-12">
+				<nav>
+					<ul>
+						<a href="/"><li>Home</li></a>
+						<a href="/posts"><li>Posts</li></a>
+						<a href="/profile"><li>Profile</li></a>
+						<a href="/write"><li>Write Post</li></a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<%= yield %>
+	</div>
+	<div id="footer" class="container">
+		<div class="row">
+			<div class="col-md-1">
+				<a href="/"><p>Home</p></a>
+				<a href="/posts"><p>Posts</p></a>
+				<a href="/profile"><p>Profile</p></a>
+				</div>
+				<div class="col-md-9">
+				</div>
+				<div class="col-md-1">
+				<a href="/signup"><p id="signup">Sign Up</p></a>
+				<a href="/signin"><p id="signin">Sign In</p></a>
+				<p id="contactbtn">Contact Us</p>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>
