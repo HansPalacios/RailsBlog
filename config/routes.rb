@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   root 'home#index'
-  resources :comments
-  resources :posts
+  resources :posts do
+  	resources :comments
+  end
   resources :users
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/signup' =>'signup#index'
+  get '/signin' =>'signin#index'
+  post '/sign-in' => 'signin#create'
+  post '/signout' => 'signin#destroy'
+  get '/post' => 'home#index'
+  resources :profile, only: [:index,:show,:update,:create,:destroy]
 end

@@ -1,6 +1,7 @@
 class CreateUsers < ActiveRecord::Migration[5.1]
   def change
     create_table :users do |t|
+      t.string :username, limit: 20
       t.string :fname, limit: 128
       t.string :lname, limit: 128
       t.string :email

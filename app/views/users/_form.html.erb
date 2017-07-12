@@ -12,12 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :fname %>
+    <%= form.label :username %>
+    <%= form.text_field :username, id: :user_username %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'First Name' %>
     <%= form.text_field :fname, id: :user_fname %>
   </div>
 
   <div class="field">
-    <%= form.label :lname %>
+    <%= form.label 'Last Name' %>
     <%= form.text_field :lname, id: :user_lname %>
   </div>
 
@@ -32,6 +37,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit%>
   </div>
 <% end %>

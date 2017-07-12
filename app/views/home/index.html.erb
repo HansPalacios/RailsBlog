@@ -1,1 +1,10 @@
-<h1>My Blog</h1>
+<h1>Rails Blog</h1>
+
+<% for i in 0...@posts.length %>
+    <div class="posts">
+    <a href="/post">
+     <h5><%= @posts[i].title %></h5>
+     <p><%= @posts[i].body %></p>
+     </a>
+     </div>
+<% end %>
