@@ -12,13 +12,12 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
       @post = Post.find(params[:id])
-      @comment = Comment.find(params[:post_id])
-
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+    @comment = Comment.new(post_id: params[:post_id])
   end
 
   # GET /posts/1/edit

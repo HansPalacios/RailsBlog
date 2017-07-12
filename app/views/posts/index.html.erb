@@ -4,19 +4,18 @@
         <p id="notice"><%= notice %></p>
         <% @posts.each do |post| %>
           <article>
-            <a href="/post/<%= post.id %>">
             <h5><%= post.title %></h5>
               <p><%= post.body %></p>
-              <p><%= post.user.fname %></p>
-              <p><%= link_to 'Show', post %></p>
-              <p><%= link_to 'Edit', edit_post_path(post) %></p>
-              <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-            </a>
-            <a href="/comment/<%= post.id %>">
-              <p><%= comment.body %></p>
-              <p><%= user_id %></p>
-              <p><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-            </a>
+              <p class="user">-<%= post.user.fname %></p>
+              <br>
+              <p><%= link_to 'Post', post %>   |   <%= link_to 'Edit', edit_post_path(post) %></p>
+              <% post.comments.each do |comment| %>
+                <div class="comment">
+                  <p><%= comment.body %></p>
+                  <p class="user">-<%= link_to  comment.user.fname, comment.user %></p>
+                  <p><%= link_to 'Delete', post_comment_path(post, comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                </div>
+              <% end %>
           </article>
         <% end %>
   </div>
