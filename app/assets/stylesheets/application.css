@@ -16,32 +16,47 @@
 
 
 /*general*/
+ul {
+	display: inline-block;
+}
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
 * {
 	margin: 0;
 	padding: 0;
 }
 body {
+	position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
 	padding: 0;
+	width: 100%;
 }
 a {
 	text-decoration-style: none;	
 	text-decoration-line: none;
 	color: black;
+	font-family: 'Old Standard TT', serif;
 }
 .container {
 	margin: 0;
 	padding: 0;
+	width: 100%;
 }
 /*header*/
 #header {
-	background: linear-gradient(90deg, rgba(228,228,228,0), rgba(200,0,2,.3), rgba(228,228,228,0));
-	height: 100px;
+	background-color: rgba(200,0,2,.3);
+	height: 130px;
+	padding-left: 100px;
+	padding-right: 100px;
 }
 #header #signup, #header #signin {
 	height: 30px;
 	padding: 5px;
 	margin-top: 25px;
-	border: 1px solid grey;
 	text-align: center;
 	background: linear-gradient(rgba(228,228,228,1), rgba(200,0,2,.3));
 	color: black;
@@ -49,7 +64,14 @@ a {
 }
 h1 {
 	width: 240px;
-	margin: 30px auto;
+	margin: 30px auto 20px auto;
+	text-align: center;
+	font-family: 'Playfair Display SC', serif;
+}
+h2 {
+	font-family: 'Playfair Display SC', serif;
+	width: 240px;
+	margin: 10px auto 80px auto;
 	text-align: center;
 }
 li {
@@ -57,7 +79,10 @@ li {
 	display: inline-block;
 	margin: 3px 20px;
 	float: left;
-	background: linear-gradient(90deg, rgba(228,228,228,0), rgba(200,0,2,.3), rgba(228,228,228,0));
+	font-family: 'Old Standard TT', serif;
+}
+p {
+	font-family: 'Old Standard TT', serif;
 }
 #nav {
 	margin-bottom: 50px;
@@ -69,45 +94,71 @@ li {
 
 /*footer & sign in box*/
 #footer {
-	background: linear-gradient(90deg, rgba(228,228,228,0), rgba(200,0,2,.3), rgba(228,228,228,0));
-	height: 120px;
-	padding: 20px;
-	bottom: 0;
+	background-color: rgba(200,0,2,.3);
+	height: 140px;
+	position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  margin-bottom: 0;
+  display: block;
 }
 #footer p {
 	width: 200px;
 	color: black;
 	top: 20%;
-	left: 20%;
+	left: 10%;
 	cursor: pointer;
-	margin: 5px;
+	margin: 10px;
+	padding-left: 50px;
+	padding-right: 0px;
+}
+#footer h5 {
+	margin: 50px auto;
 }
 .field {
 	margin: 0 auto;
 	padding-left: 40%;
 }
-
+form label {
+	display: block;
+	width: 00px;
+	height: 25px;
+	font-size: 16px;
+	margin: 0 auto;
+}
 form input{
 		display: block;
-		width: 100px;
+		width: 200px;
 		height: 25px;
 		font-size: 16px;
-		margin: 20px auto;
+		margin: 5px auto;
 		background-color: rgba(224,224,224,1);}
 form textarea{
 	height: 100px;
 	display: block;
-	width: 100%;
+	width: 400px;
 	font-size: 16px;
+	margin: 0 auto;
 	margin-top: 10px;
 	background-color: rgba(224,224,224,1);
 	color: black;
 	padding: 10px;
 }
-form input[name="submit"]{
-	width: 80px;
-	height: px;
-	margin: 10px auto;
-	padding: 0;
+form input[name="commit"]{
+		display: block;
+		width: 100px;
+		height: 25px;
+		font-size: 16px;
+		background-color: rgba(224,224,224,1);
+		margin: 20px auto;
+}
+form .field {
+		text-align: center;
+		margin: 0 auto;
+		padding-left: 0;
+	}
+
 }
 

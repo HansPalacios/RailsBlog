@@ -1,19 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.fname %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @user.lname %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<div class="row">
+	<div class="col-md-5 userpage">
+		<div class="row">
+		 <h2><strong><%= @user.fname %> <%= @user.lname %></strong></h2> 
+		</div>
+		<div class="row">
+	    <h4>Posts</h4>
+	        <% @posts.each do |post| %>
+	          <article><a href="/post/<%= post.id %>">
+	          <h5><%= post.title %></h5>
+	          <p><%= post.body %></p>
+	          </a><a href="/post/<%= post.id %>/delete"><button style.display="block" name="delete">Delete</button></a><%=flash[:message]%></article>
+	        <% end %>
+    </div>
+  </div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> 
 <%= link_to 'Back', users_path %>
+
+</div>

@@ -1,17 +1,37 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+.show {
+	text-align: center;
+	a {
+		width: 100px;
+		margin: 0 10px;
+	}
+	#navposts {
+		margin: 0 auto 300px auto;
+	}
+}
+.postpage {
+	margin-bottom: 200px;
+	height: 100%;
+	background-color: white;
+	padding: 100px;
+	article {
+		height: 250px;
+	}
+}
 article {
-	height: 300px;
-	width: 300px;
-	background: linear-gradient(rgba(228,228,228,1), rgba(93,0,1,1));
-	margin:0 5px 20px 5px;
+	width: 250px;
+	float: left;
+	background: linear-gradient(rgba(200,0,2,.2), rgba(20,20,20,0));
+	margin: 10px;
 	border-radius: 5%;
 	padding: 20px;
+	top: 0;
 	text-align: center;
+	box-shadow: 10px 10px 5px #888888;
 	.comment {
-	background-color: rgba(93,0,1,.2);
+	background-color: rgba(228,200,200,.2);
 	margin: 10px;
 	padding: 10px
 		p {
@@ -25,5 +45,55 @@ article {
 	.user {
 		float: right;
 		margin-right: 10px;
+	}
+}
+#postpage {
+	min-height: 400px;
+	max-height: 1000px;
+	width: 600px;
+	margin: 50px auto;
+	#commentform {
+	background-color: rgba(228,200,200,.5);
+	text-align: center;
+	padding-bottom: 1px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	}
+	form label {
+		width: 100px;
+	}
+	form input{
+		display: block;
+		width: 200px;
+		height: 23px;
+		font-size: 12px;
+		margin: 0 auto;
+		background-color: rgba(224,224,224,1);
+	}
+	form textarea{
+		height: 100px;
+		display: block;
+		width: 100%;
+		font-size: 16px;
+		margin-top: 10px;
+		background-color: rgba(224,224,224,.2);
+		color: black;
+		padding: 10px;
+	}
+	form input[name="commit"]{
+		display: block;
+		width: 150px;
+		height: 25px;
+		font-size: 12px;
+		background-color: rgba(224,224,224,1);
+		margin: 20px auto;
+	}
+	form .field {
+		text-align: center;
+		margin: 0 auto;
+		padding-left: 0;
+	}
+	#commentbtn {
+		font-size: 13px;
 	}
 }

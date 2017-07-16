@@ -1,3 +1,33 @@
 // Place all the styles related to the signin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+form input[name="commit"]{
+		display: block;
+		width: 100px;
+		height: 25px;
+		font-size: 16px;
+		background-color: rgba(224,224,224,1);
+		margin: 20px auto;
+}
+
+#signinbox {
+	width: 600px;
+	height: 350px;
+	background-color: rgba(100,100,100,.8);
+	border: 2px solid black;
+	padding: 30px 50px;
+	border-radius: 25px;
+	position: fixed;
+	text-align: center;
+	top: 20%;
+	left: 20%;
+	display: none;
+	z-index: 1;
+}
+#close, #close2 {
+	right: 15px;
+	top: 10px;
+	position: absolute;
+	cursor: pointer;
+	color: white;
+}

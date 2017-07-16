@@ -7,17 +7,26 @@
 	width: 300px;
 	border: 1px solid black;
 	padding: 50px;
-	label, p {
+	p {
 		color: black;
 	}
-	input, label {
-		margin: 5px;
+	input {
+		margin-bottom: 5px;
+		margin-top: 0;
+	}
+	label {
+		color: black;
+		width: 100px;
+		margin-bottom: 0;
+	}
+	.save {
+		width: 100px;
+		height: 25px;
 	}
 }
 
 .profile {
 	padding: 50px;
-	margin: 100px;
 	h5, .acct{
 	color: black;
 	font-size: 40px;
@@ -34,6 +43,7 @@
 	margin-left: 70px;
 	h4 {
 	color: teal;
+	margin: 5px 5px 5px 0;
 	}
 	p{
 	color: black;
@@ -49,6 +59,12 @@
 .myposts {
 	padding: 0 30px 30px 30px;
 	text-align: center;
+	width: 300px;
+	h4 {
+		font-size: 30px;
+		margin: 20px;
+		margin-right: 150px;
+	}
 	h5 {
 	color: black;
 	width: 250px;
@@ -57,6 +73,9 @@
 	}
 	p {
 		margin: 20px;
+	}
+	article {
+		width: 300px;
 	}
 }
 

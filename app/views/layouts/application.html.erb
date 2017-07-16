@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsBlog</title>
+    <title>Pink Panther</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap-grid.css">
+    <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT|Open+Sans+Condensed:300|Playfair+Display+SC|Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="jquery.circular-carousel.css">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap-grid.css">
+    
   </head>
 
   <body>
     <div class="container">
 		<div id="header" class="row">
 			<div class="col-md-3">
-				<a href="/"><h1>Rails Blog</h1></a>
+				<a href="/"><h1>Pink Panther</h1></a>
 			</div>
 			<div class="col-md-5">
 			</div>
@@ -22,38 +25,39 @@
 			<div class="col-md-2">
 				<a href="/signin"><p id="signin">Sign In</p></a>
 			</div>
-		</div>
-		<div id="nav" class="row">
+			<div class="row">
 			<div class="col-md-12">
-				<nav>
 					<ul>
 						<a href="/"><li>Home</li></a>
-						<a href="/posts"><li>Posts</li></a>
-						<a href="/users"><li>Users</li></a>
+						<a href="/posts"><li>Heists</li></a>
+						<a href="/users"><li>Fellow Thieves</li></a>
 						<a href="/profile"><li>Profile</li></a>
-						<a href="/posts/new"><li>Write Post</li></a>
+						<a href="/posts/new"><li>Brag about a heist</li></a>
 					</ul>
-				</nav>
 			</div>
 		</div>
+	</div>
 	</div>
 	<div class="container">
 		<%= yield %>
 	</div>
 	<div id="footer" class="container">
 		<div class="row">
-			<div class="col-md-1">
+			<div class="col-md-4">
 				<a href="/"><p>Home</p></a>
-				<a href="/posts"><p>Posts</p></a>
-				<a href="/users"><p>Users</p></a>
+				<a href="/posts"><p>Heists</p></a>
+				<a href="/users"><p>Fellow Thieves</p></a>
 				</div>
-				<div class="col-md-9">
+				<div class="col-md-4">
 				</div>
-				<div class="col-md-1">
-				<a href="/users/new"><p id="signup">Sign Up</p></a>
-				<a href="/signin"><p id="signin">Sign In</p></a>
-			</div>
+				<div class="col-md-4">
+				<h5>© 2017 Pink Panther</h5>
+				</div>
 		</div>
 	</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="jquery.cloud9carousel.js"></script>
+<script src="jquery.reflection.js"></script>
+
   </body>
 </html>

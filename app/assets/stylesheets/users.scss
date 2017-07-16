@@ -1,13 +1,24 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-table {
-	border-spacing: 20px;
-	margin: 0 auto;
-	th {
-		background-color: tan;
+.userpage {
+	background: linear-gradient(rgba(62,0,0,1), rgba(200,0,2,.3));
+	color: white;
+	margin: 20px auto 200px auto;
+	text-align: center;
+	padding: 50px;
+	display: block;
+	h2 {
+		padding: 20px;
+		margin-bottom: 0;
 	}
-	.rows {
-		border: 1px solid darkgrey;
+	article {
+		box-shadow: 5px 5px 5px #000;
+		background-color: rgba(62,0,0,1);
+		h5, p {
+			color: rgba(216,216,216,1);
+		}
 	}
 }
+
+
