@@ -1,6 +1,12 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.users {
+	z-index: 1;
+	a {
+		cursor: pointer;
+	}
+}
 .userpage {
 	background: linear-gradient(rgba(62,0,0,1), rgba(200,0,2,.3));
 	color: white;

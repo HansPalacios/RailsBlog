@@ -19,20 +19,26 @@
 			</div>
 			<div class="col-md-5">
 			</div>
+		<% if !@current_user %>
+				<div class="col-md-2">
+					<a href="/users/new"><p id="signup">Sign Up</p></a>
+				</div>
+				<div class="col-md-2">
+					<a href="/signin"><p id="signin">Sign In</p></a>
+				</div>
+		<% else %>
 			<div class="col-md-2">
-			<a href="/users/new"><p id="signup">Sign Up</p></a>
-			</div>
-			<div class="col-md-2">
-				<a href="/signin"><p id="signin">Sign In</p></a>
-			</div>
+					<a href="/signout"><p id="signout">Sign Out</p></a>
+				</div>
+		<% end %>
 			<div class="row">
 			<div class="col-md-12">
 					<ul>
-						<a href="/"><li>Home</li></a>
-						<a href="/posts"><li>Heists</li></a>
-						<a href="/users"><li>Fellow Thieves</li></a>
-						<a href="/profile"><li>Profile</li></a>
-						<a href="/posts/new"><li>Brag about a heist</li></a>
+						<%= link_to root_path do %><li>Home</li><% end %>
+						<%= link_to posts_path do %><li>Posts</li><% end %>
+						<%= link_to users_path do %><li>Users</li><% end %>
+						<%= link_to user_path(@current_user.id) do %><li>Profile</li><% end %>
+						<%= link_to new_post_path do %><li>Write a Post</li><% end %>
 					</ul>
 			</div>
 		</div>
@@ -41,6 +47,7 @@
 	<div class="container">
 		<%= yield %>
 	</div>
+	
 	<div id="footer" class="container">
 		<div class="row">
 			<div class="col-md-4">

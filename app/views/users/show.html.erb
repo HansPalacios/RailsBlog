@@ -1,22 +1,80 @@
-<p id="notice"><%= notice %></p>
 
-<div class="row">
-	<div class="col-md-5 userpage">
-		<div class="row">
-		 <h2><strong><%= @user.fname %> <%= @user.lname %></strong></h2> 
-		</div>
-		<div class="row">
-	    <h4>Posts</h4>
-	        <% @posts.each do |post| %>
-	          <article><a href="/post/<%= post.id %>">
-	          <h5><%= post.title %></h5>
-	          <p><%= post.body %></p>
-	          </a><a href="/post/<%= post.id %>/delete"><button style.display="block" name="delete">Delete</button></a><%=flash[:message]%></article>
-	        <% end %>
+<div class="row profile">
+  <div class="col-md-6">
+    <h4 id="acct">Bonjour Monsieur <%= @user.username %></h4>
+    
+    <br>
+    <br>
+    <div id="edit-input" >
+      <div class="thumbnail">
+        <p>Account details:</p>
+        <form method="POST" action="/profile/update">
+          <input type="hidden" name="_method" value="PUT">
+          <%= hidden_field_tag :authenticity_token,form_authenticity_token %>
+          <div class="form-group">
+            <label>Username</label>
+            <input type="username" id="profileName" value="<%= @user.username %>" name="username">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="exampleInputPassword1"
+            value="<%= @user.username %>" name="password">
+          </div>
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="fname" id="fname" value="<%= @user.fname %>" name="fname">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="lname" id="exampleInputPassword1" value="<%= @user.lname %>" name="lname">
+          </div>
+          <div class="form-group">
+            <label>Email address</label>
+            <input type="email" id="exampleInputEmail1" value="<%= @user.email %>" name="email">
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="pull-right">
+            <button type="submit" class="save">Save</button>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+  
+    </div>
+    <div id="acct-info" >
+      <h4>Username:</h4>
+      <br>
+      <p><%= @user.username %></p>
+      <br>
+      <h4>First Name</h4>
+      <p><%= @user.fname %></p>
+      <br>
+      <h4>Last Name</h4>
+      <p><%= @user.lname %></p>
+      <br>
+      <h4>Email:</h4>
+      <p><%= @user.email %></p>
+      <br>
+      <% if @current_user && @user_id = @current_user.id %>
+	      <button type="text" id="edit">Edit</button>
+	      <br>
+	      <br>
+	      <a href="/profile" data-method="delete"><button type="delete" class="delete" name="delete">Delete User</button></a>
+      <% end %>
     </div>
   </div>
-
-<%= link_to 'Edit', edit_user_path(@user) %> 
-<%= link_to 'Back', users_path %>
-
+  <div class="col-md-6 myposts postpage">
+    <h4>Heists</h4>
+      <div class="article">
+        <% @posts.each do |post| %>
+          <article><a href="/post/<%= post.id %>">
+          <h5><%= post.title %></h5>
+          <p><%= post.body %></p>
+          </a><a href="/post/<%= post.id %>" data-method="destroy"><button style.display="block" name="delete">Delete</button></a><%=flash[:message]%></article>
+        <% end %>
+      </div>
+  </div>
 </div>

@@ -13,7 +13,15 @@ User.create ([
 	])
 
 Post.create([
-{user_id: 2, title: "Florida", body: 'hola'}
+{title: "Puppy", body: 'Do you ever see a puppy and think "oh my god i need it!!" ...well here, meet Spot', user_id: 1},
+{title: "Weave", body: 'How would a women react if someone stole a weave from her head? Apparently not too kindly. But here I am, winded, but successful.', user_id: 1},
+{title: "Twas twilight when I stole a duck", body: 'The ducks were aplenty, so who would notice if one was amiss?', user_id: 2},
+{title: "The Mona Lisa", body: 'Went to le Louve and under the mask of darkness, and a bit of skill, I stole the beauty from France!', user_id: 1},
+{title: "Pineapple", body: 'Ever swung by a fruit cart and gotten away with a whole pineapple!?', user_id: 3},
+{title: "Rose", body: 'If you are broke and in love, what do you do? well you steal a rose and woo her anyway!', user_id: 2},
+{title: "Beach", body: 'Coney Island now has no sand!!!! muahahaha', user_id: 1},
+{title: "Pen", body: 'Been stealing pens from people in class for over 3 years now, and have a stockpile of 4,687 pens. Ha.', user_id: 3}
+
 	])
 
 Comment.create([

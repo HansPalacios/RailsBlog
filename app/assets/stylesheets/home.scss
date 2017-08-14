@@ -1,6 +1,9 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.bottom {
+  height: 200px;
+}
 .posts {
 	height: 100px;
 	width: 300px;
@@ -14,6 +17,9 @@
 	color: white;
 	margin: 20px;
 	}
+  p {
+    color: rgba(220,220,220,1)
+  }
 	.user {
 		float: right;
 		margin: 10px;

@@ -3,34 +3,34 @@
 </div>
 <div class="row show">
   <article id="postpage">
-            <h3><%= @post.title %></h3>
-              <p><%= @post.body %></p>
-              <p class="user">-<%= link_to  @post.user.fname, @post.user %></p>
-  						<br>
-  						<br>
-  						<div id="commentform">
-              <% if @current_user %>
-              <%= render 'comments/form', comment: Comment.new %>
-              <% end %>
-              </div>
-              <% @post.comments.each do |comment| %>
-                <div class="comment">
-                  <p><%= comment.body %></p>
-                  <p class="user">-<%= link_to  comment.user.fname, comment.user %></p>
-                  <br>
-                  <% if @current_user&&@current_user.id == comment.user.id %>
-                  <p id="commentbtn"><%= link_to 'Delete', post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-                  <% end %>
-                </div>
-              <% end %>
+    <h3><%= @post.title %></h3>
+      <p><%= @post.body %></p>
+      <p class="user">-<%= link_to  @post.user.fname, @post.user %></p>
+  		<br>
+  		<br>
+  		<div id="commentform">
+        <% if @current_user %>
+          <%= render 'comments/form', comment: Comment.new %>
+        <% end %>
+      </div>
+      <% @post.comments.each do |comment| %>
+        <div class="comment">
+          <p><%= comment.body %></p>
+          <p class="user">-<%= link_to  comment.user.fname, comment.user %></p>
+          <br>
+          <% if @current_user && @current_user == @post.user %>
+            <p id="commentbtn"><%= link_to 'Delete', post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <% end %>
+        </div>
+      <% end %>
   </article>
 </div>
 <div class="row show">
   <div id="navposts">
-    <% if @current_user&&@current_user.id == @post.user_id %>
-    <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %> |
-    <%= link_to 'Edit', edit_post_path(@post) %> |
+    <% if @current_user && @current_user == @post.user %>
+      <%= link_to 'Delete', post_path, method: :delete, data: { confirm: 'Are you sure?' } %> |
+      <%= link_to 'Edit', edit_post_path(@post) %> |
     <% end %>
-    <%= link_to 'Back', posts_path %>
+      <%= link_to 'Back', posts_path %>
     </div>
 </div>

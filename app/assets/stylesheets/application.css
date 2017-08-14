@@ -53,7 +53,7 @@ a {
 	padding-left: 100px;
 	padding-right: 100px;
 }
-#header #signup, #header #signin {
+#header #signup, #header #signin, #header #signout{
 	height: 30px;
 	padding: 5px;
 	margin-top: 25px;
@@ -83,6 +83,7 @@ li {
 }
 p {
 	font-family: 'Old Standard TT', serif;
+	border: none;
 }
 #nav {
 	margin-bottom: 50px;
@@ -123,7 +124,7 @@ p {
 }
 form label {
 	display: block;
-	width: 00px;
+	width: 200px;
 	height: 25px;
 	font-size: 16px;
 	margin: 0 auto;

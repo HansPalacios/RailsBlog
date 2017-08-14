@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Fellow Thieves</h1>
-    <% @users.each do |user| %>
-       <article class="users">
-          <h5><%= link_to  user.username, user %></h5>
-          <h6><%= user.posts.count %> Posts</h6>
-      </article>
-    <% end %>
+<% @users.each do |user| %>
+   <article class="users">
+      <h5><%= link_to user.username, user_path(user.id) %></h5>
+      <h6><%= user.posts.count %> Posts</h6>
+  </article>
+<% end %>
 
 
     

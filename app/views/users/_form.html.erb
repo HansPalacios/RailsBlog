@@ -13,27 +13,27 @@
 
   <div class="field">
     <%= form.label :username %>
-    <%= form.text_field :username, id: :user_username %>
+    <%= form.text_field :username, value: @user.username,id: :user_username %>
   </div>
 
   <div class="field">
     <%= form.label 'First Name' %>
-    <%= form.text_field :fname, id: :user_fname %>
+    <%= form.text_field :fname, value: @user.fname,id: :user_fname %>
   </div>
 
   <div class="field">
     <%= form.label 'Last Name' %>
-    <%= form.text_field :lname, id: :user_lname %>
+    <%= form.text_field :lname, value: @user.lname,id: :user_lname %>
   </div>
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email, id: :user_email %>
+    <%= form.text_field :email, value: @user.email,id: :user_email %>
   </div>
 
   <div class="field">
     <%= form.label :password %>
-    <%= form.text_field :password, id: :user_password %>
+    <%= form.text_field :password,id: :user_password %>
   </div>
 
   <div class="actions">
