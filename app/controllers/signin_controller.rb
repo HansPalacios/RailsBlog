@@ -7,7 +7,7 @@ class SigninController < ApplicationController
 		if @user && @user.password == params[:password]    
 			session[:user_id] = @user.id    
 			flash[:message] = "You've been signed in successfully."
-			redirect_to '/profile'
+			redirect_to '/'
 		else    
 			flash[:message] = "There was a problem signing you in."
 			redirect_to '/'

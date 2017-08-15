@@ -37,12 +37,19 @@
 						<%= link_to root_path do %><li>Home</li><% end %>
 						<%= link_to posts_path do %><li>Posts</li><% end %>
 						<%= link_to users_path do %><li>Users</li><% end %>
-						<%= link_to user_path(@current_user.id) do %><li>Profile</li><% end %>
-						<%= link_to new_post_path do %><li>Write a Post</li><% end %>
+						<% if @current_user %>
+							<%= link_to user_path(@current_user.id) do %><li>Profile</li><% end %>
+							<%= link_to new_post_path do %><li>Write a Post</li><% end %>
+						<% end %>
 					</ul>
 			</div>
 		</div>
 	</div>
+
+	<% flash.each do |key, value| %>
+  	<%= content_tag :div, value, class: "flash #{key}" %>
+	<% end %>
+
 	</div>
 	<div class="container">
 		<%= yield %>

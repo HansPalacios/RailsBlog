@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   get '/signin' =>'signin#index'
   post '/sign-in' => 'signin#create'
   get '/signout' => 'signin#destroy'
-  # get '/post' => 'home#index'
+  # put '/user/update' => 'users#update'
 end
